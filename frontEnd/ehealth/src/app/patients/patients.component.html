@@ -1,0 +1,72 @@
+<div class="container-fluid stretch-80">
+  <div class="row h-100">
+    <div class="col-4 bg-concrete pt-5 ">
+      <div class="stretch-0 p-4">
+        <div class=" mx-auto p-3 my-2 pb-5"><input type="text" class="form-control" placeholder="Search for a Patient">
+        </div>
+      </div>
+      <div class="mt-10 pl-3 stretch-0">
+
+        <div *ngFor="let patient of patients" class="mx-auto p-2 my-1 sticker-gris row">
+          <div class="col-2 align-self-center"><img src={{patient.photo}} class="photo-search"></div>
+          <div class="col-6 ">
+            <div class="font-weight-bolder ">{{patient.name +' '+ patient.lastName}}</div>
+            <div>{{patient.disease}} | {{calculAge(patient.birthDate.substring(0, 4))}}y | {{patient.weight}}kg</div>
+            <div></div>
+          </div>
+          <div class="col-2 align-self-center mx-auto">
+            <button (click)="delPatient(patient._id)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+          </div>
+          <div class="col-2 align-self-center mx-auto">
+              <button [routerLink]="[ '/admin/patients', patient._id ]" class="btn btn-success"><i class="fas fa-stethoscope"></i></button>
+            </div>
+        </div>
+
+        
+      </div>
+    </div>
+    <div class="col-7  bg-cloud text-center">
+      <div class="stretch-0 p-4 font-barlow row">
+        <div class="col-12 alert alert-{{newEntry.type}}"> {{newEntry.txt}}
+        </div>
+        <div class="col-2 font-weight-bold align-content-center"> Name : </div>
+        <div class="col-4"> <input [(ngModel)]="newPatient.name" class="form-control" type="text"></div>
+
+        <div class="col-2 font-weight-bold "> Last Name : </div>
+        <div class="col-4"> <input [(ngModel)]="newPatient.lastName" class="form-control" type="text"></div>
+
+        <div class="col-2 font-weight-bold align-content-center"> Birth Date : </div>
+        <div class="col-10"> <input [(ngModel)]="newPatient.birthDate" class="form-control" type="text"></div>
+
+        <div class="col-2 font-weight-bold align-content-center"> Gender : </div>
+        <div class="col-2"> <select [(ngModel)]="newPatient.sexe" class="form-control" >
+            <option>Male</option>
+            <option>Female</option>
+          </select></div>
+
+        <div class="col-2 font-weight-bold align-content-center"> Weight(kg) : </div>
+        <div class="col-2"> <input [(ngModel)]="newPatient.weight" class="form-control" type="text"></div>
+
+        <div class="col-2 font-weight-bold align-content-center"> Height(m) : </div>
+        <div class="col-2"> <input [(ngModel)]="newPatient.height" class="form-control" type="text"></div>
+
+        <div class="col-2 font-weight-bold align-content-center"> Tel : </div>
+        <div class="col-4"> <input [(ngModel)]="newPatient.tel" class="form-control" type="text"></div>
+
+        <div class="col-2 font-weight-bold align-content-center"> Address : </div>
+        <div class="col-4"> <input [(ngModel)]="newPatient.address" class="form-control" type="text"></div>
+
+        <div class="col-2 font-weight-bold align-content-center"> Photo : </div>
+        <div class="col-10"> <input [(ngModel)]="newPatient.photo" class="form-control" type="text"></div>
+
+        <div class="col-2 font-weight-bold align-content-center"> Disease : </div>
+        <div class="col-10"> <input [(ngModel)]="newPatient.disease" class="form-control" type="text"></div>
+      </div>
+    </div>
+    <div class="col-1  bg-concrete text-center">
+      <div class="stretch-0 p-4">
+        <button (click)="addPatient()" class="btn btn-danger"><i class="fas fa-user-plus"></i></button>
+      </div>
+    </div>
+  </div>
+</div>

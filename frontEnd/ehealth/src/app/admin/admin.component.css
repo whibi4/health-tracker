@@ -1,0 +1,31 @@
+.bg-blue{
+    background-color: #3498db !important ;
+}
+.w-10{
+    width: 40px;
+}
+.icon{
+    font-size: 2rem ;
+    color: #ffffff ;
+}
+.active{
+    background-color: #226694 !important ;
+    border-radius: 10px;
+    color: #8ec9f1
+
+}
+.photo-profile{
+    width: 60px ;
+    height: 60px; 
+    border-radius: 50%
+}
+.photo{
+    border-radius: inherit ;
+    width: inherit ;
+    height: inherit;
+}
+.notification{
+    font-size: 0.75rem ;
+    font-family: 'Barlow', sans-serif;
+    
+}

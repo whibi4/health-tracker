@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+html,body{
+    height: 100%;
+}
+.btn-green { 
+    color: #ffffff; 
+    background-color: #2ECC71; 
+    border-color: #27AE60; 
+  } 
+   
+  .btn-green:hover, 
+  .btn-green:focus, 
+  .btn-green:active, 
+  .btn-green.active, 
+  .open .dropdown-toggle.btn-green { 
+    color: #ffffff; 
+    background-color: #22BD63; 
+    border-color: #27AE60; 
+  } 
+   
+  .btn-green:active, 
+  .btn-green.active, 
+  .open .dropdown-toggle.btn-green { 
+    background-image: none; 
+  } 
+   
+  .btn-green.disabled, 
+  .btn-green[disabled], 
+  fieldset[disabled] .btn-green, 
+  .btn-green.disabled:hover, 
+  .btn-green[disabled]:hover, 
+  fieldset[disabled] .btn-green:hover, 
+  .btn-green.disabled:focus, 
+  .btn-green[disabled]:focus, 
+  fieldset[disabled] .btn-green:focus, 
+  .btn-green.disabled:active, 
+  .btn-green[disabled]:active, 
+  fieldset[disabled] .btn-green:active, 
+  .btn-green.disabled.active, 
+  .btn-green[disabled].active, 
+  fieldset[disabled] .btn-green.active { 
+    background-color: #2ECC71; 
+    border-color: #27AE60; 
+  } 
+   
+  .btn-green .badge { 
+    color: #2ECC71; 
+    background-color: #ffffff; 
+  }
+  .font-barlow{
+      font-family: 'Barlow', sans-serif;
+  }

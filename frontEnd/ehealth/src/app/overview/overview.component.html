@@ -1,0 +1,45 @@
+<div class="container-fluid stretch-80">
+  <div class="row h-100">
+    <div class="col-3 bg-concrete pt-5">
+      <div class=" mx-auto sticker-red p-3 my-2"><i class="fas fa-users icon align-middle mr-2"></i> Number of Patients
+        : {{number}}</div>
+      <div class=" mx-auto sticker-red p-3 my-2"><i class="fas fa-history icon align-middle mr-2"></i> Last Update:
+        {{thisTime}}</div>
+      <div class="mx-auto sticker-green p-3 mt-5 text-center">
+        <h5>Patients' Partition Ordered by</h5>
+        <div class="btn-group">
+          <button (click)="change('G')" type="button" class="btn btn-success">Gender</button>
+          <button (click)="change('A')" type="button" class="btn btn-success">Age</button>
+          <button (click)="change('D')" type="button" class="btn btn-success">Disease</button>
+        </div>
+      </div>
+      <div class="mt-5 pt-5"> <button [routerLink]="['/']" class="btn btn-secondary btn-block font-barlow">Log out <i
+            class="fas fa-sign-out-alt"></i></button> </div>
+    </div>
+    <div class="col-9  bg-cloud text-center">
+      <div class="stretch-0 p-4">
+        <div class="chart" *ngIf="aff == 'A'">
+          <h4 class="font-barlow"> Patients' Partition ordered by Age <i class="fas fa-baby-carriage"></i> </h4>
+          <canvas class="px-5" id="age"></canvas>
+          <div class="alert alert-primary "> these data correspond to the last updated rslt of patients available in the
+            data set </div>
+        </div>
+
+        <div class="chart" *ngIf="aff == 'G'">
+          <h4 class="font-barlow"> Patients' Partition ordered by Gender <i class="fas fa-venus-mars"></i> </h4>
+          <canvas class="px-5" id="gender"></canvas>
+          <div class="alert alert-primary "> these data correspond to the last updated rslt of patients available in the
+            data set </div>
+        </div>
+
+        <div class="chart" *ngIf="aff == 'D'">
+          <h4 class="font-barlow"> Patients' Partition ordered by Disease <i class="fas fa-heartbeat"></i> </h4>
+          <canvas class="px-5" id="disease"></canvas>
+          <div class="alert alert-primary "> these data correspond to the last updated rslt of patients available in the
+            data set </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+<div class="container-fluid stretch-80">
+    <div class="row h-100">
+      <div class="col-4 bg-concrete pt-5 ">
+        <div class="mt-4 pl-3 stretch-0">   
+          <div class="row">
+            <div class="col-3"><img class="photo-search" src="{{newPatient.photo}}"></div>
+            <div class="col-9">
+              <h5 class="font-barlow text-light">{{newPatient.name+' '+newPatient.lastName}}</h5>
+              <p class="font-barlow text-light">{{newPatient.disease}} | {{calculAge(newPatient.birthDate.substring(0, 4))}}y | {{newPatient.weight}}kg</p>
+            </div>
+
+            <div class="col-8 mx-auto bg-success mt-5 border-corner p-3 row text-center">
+              <div class="col-2"><i class="fas fa-temperature-high icon"></i></div>
+              <div class="col-10">{{update.temp}}</div>
+            </div>
+            <div class="col-8 mx-auto bg-success mt-3 border-corner p-3 row text-center">
+                <div class="col-2"><i class="fas fa-walking icon"></i></div>
+                <div class="col-10">{{update.accel.accelX + ','+ update.accel.accelY + ',' +update.accel.accelZ }}</div>
+              </div>
+
+            <div class="col-8 mx-auto bg-success mt-3 border-corner p-3 row text-center">
+                <div class="col-2"><i class="fas fa-sync icon"></i></div>
+                <div class="col-10">{{update.gyro.gyroX + ','+ update.gyro.gyroY + ',' +update.gyro.gyroZ }}</div>
+              </div>
+
+            <div class="col-8 mx-auto bg-success mt-3 border-corner p-3 row text-center">
+                <div class="col-2"><i class="fas fa-robot icon"></i></div>
+                <div class="col-10">{{update.rsltAi}}</div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-7  bg-cloud text-center">
+        <div class="stretch-0 p-4 font-barlow row">
+          <div class="col-12 alert alert-{{newEntry.type}}"> {{newEntry.txt}}
+          </div>
+          <div class="col-2 font-weight-bold align-content-center"> Name : </div>
+          <div class="col-4"> <input [(ngModel)]="newPatient.name" class="form-control" type="text"></div>
+  
+          <div class="col-2 font-weight-bold "> Last Name : </div>
+          <div class="col-4"> <input [(ngModel)]="newPatient.lastName" class="form-control" type="text"></div>
+  
+          <div class="col-2 font-weight-bold align-content-center"> Birth Date : </div>
+          <div class="col-10"> <input [(ngModel)]="newPatient.birthDate" class="form-control" type="text"></div>
+  
+          <div class="col-2 font-weight-bold align-content-center"> Gender : </div>
+          <div class="col-2"> <select [(ngModel)]="newPatient.sexe" class="form-control" >
+              <option>Male</option>
+              <option>Female</option>
+            </select></div>
+  
+          <div class="col-2 font-weight-bold align-content-center"> Weight(kg) : </div>
+          <div class="col-2"> <input [(ngModel)]="newPatient.weight" class="form-control" type="text"></div>
+  
+          <div class="col-2 font-weight-bold align-content-center"> Height(m) : </div>
+          <div class="col-2"> <input [(ngModel)]="newPatient.height" class="form-control" type="text"></div>
+  
+          <div class="col-2 font-weight-bold align-content-center"> Tel : </div>
+          <div class="col-4"> <input [(ngModel)]="newPatient.tel" class="form-control" type="text"></div>
+  
+          <div class="col-2 font-weight-bold align-content-center"> Address : </div>
+          <div class="col-4"> <input [(ngModel)]="newPatient.address" class="form-control" type="text"></div>
+  
+          <div class="col-2 font-weight-bold align-content-center"> Photo : </div>
+          <div class="col-10"> <input [(ngModel)]="newPatient.photo" class="form-control" type="text"></div>
+  
+          <div class="col-2 font-weight-bold align-content-center"> Disease : </div>
+          <div class="col-10"> <input [(ngModel)]="newPatient.disease" class="form-control" type="text"></div>
+        </div>
+      </div>
+
+      <div class="col-1  bg-concrete text-center">
+        <div class="stretch-0 p-4">
+          <button (click)="updatePatient()" class="btn btn-success"><i class="fas fa-edit"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
